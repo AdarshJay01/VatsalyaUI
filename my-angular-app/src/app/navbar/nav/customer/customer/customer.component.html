@@ -1,0 +1,61 @@
+<div class="container">
+
+
+    <button class="btn btn-primary mt-4" style="float: right; margin-top: 50px; border-radius: 5%; border:0cap white; background-color: rgb(65, 143, 126); width: 50px; height:50px; " (click)="openDialog()">
+      <mat-icon style="color: white;">person_add</mat-icon>
+    </button>
+  
+    <mat-form-field style="width:400px; height:68px; margin-top: 50px; border-radius: 5%; border: 5px black;">
+      <mat-label>Filter</mat-label>
+      <mat-icon matPrefix>search</mat-icon>
+      <input matInput (keyup)="applyFilter($event)" #input>
+    </mat-form-field>
+    
+    
+    <div class="mat-elevation-z8">
+      <table mat-table [dataSource]="dataSource" class="table  table-striped light-border" matSort >
+      
+      
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef style="background-color: rgb(57, 57, 57); color: white;"> OrderId </th>
+        <td mat-cell *matCellDef="let row"> {{ row.id }} </td>
+      </ng-container>
+
+  
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef style="background-color: rgb(57, 57, 57); color: white;"> Name </th>
+        <td mat-cell *matCellDef="let row"> {{ row.name }} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="phno">
+        <th mat-header-cell *matHeaderCellDef style="background-color: rgb(57, 57, 57); color: white;"> PhoneNumber </th>
+        <td mat-cell *matCellDef="let row"> {{ row.phno }} </td>
+      </ng-container>
+  
+     
+      <ng-container matColumnDef="history">
+        <th mat-header-cell *matHeaderCellDef style="background-color: rgb(57, 57, 57); color: white;"> History</th>
+        <td mat-cell *matCellDef="let row">
+
+            <button mat-icon-button style="background-color: rgb(158, 74, 101); margin-right: 10px; border-radius: 5%; border:0cap white;"> 
+            <mat-icon style="color: rgb(250, 250, 250);">history</mat-icon>
+
+          </button>
+          <button mat-icon-button style="background-color: orange; border-radius: 5%; border:0cap white;" (click)="editRoom(row)"> 
+            <mat-icon>edit</mat-icon>
+          </button>
+        
+
+        </td>
+      </ng-container>
+
+      
+  
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;" [class.alternate-row]="row.index % 2 === 1"></tr>
+  
+  
+     
+    </table>
+    <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users"></mat-paginator>
+  </div>

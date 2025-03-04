@@ -1,0 +1,43 @@
+.alternate-row {
+    background-color: #eeeeee; /* Light gray background for alternate rows */
+  }
+  .light-border {
+    border-collapse: collapse; /* Separate cell borders */
+    border: 1px solid #ddd; /* Light gray border color */
+    text-align: center;
+  }
+  .container{
+   
+    margin-left: 50px;
+    width: 1000px;
+    height: 500px;
+    border: 25px;
+    
+  }
+  .fiddle{
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .graphs{
+    margin-top: 50px;
+    justify-content: space-around;
+    display: flex;
+    flex-direction: row;
+
+  }
+  .graphs div{
+    height: 350px;
+    width: 400px;
+    border-radius: 10%;
+    background-color: rgb(223, 223, 223);
+    display: flex;
+    justify-content: center;
+
+  }
+
+
+
+
+/* demo styles */
+

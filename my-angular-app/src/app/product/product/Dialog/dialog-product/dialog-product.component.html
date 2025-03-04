@@ -1,0 +1,94 @@
+<h1 mat-dialog-title>Add Product</h1>
+<div mat-dialog-content>
+  <form [formGroup]="productform" style="display: flex; flex-direction: column; gap: 15px;">
+    <!-- Custom Field for Item -->
+    <div style="display: flex; flex-direction: column;">
+      <label for="name" style="font-weight: bold;">Enter Name</label>
+      <div style="display: flex; align-items: center; border: 1px solid #ccc; border-radius: 4px; padding: 5px;">
+        <input
+          id="name"
+          formControlName="name"
+          type="text"
+          placeholder="Name"
+          style="border: none; outline: none; flex-grow: 1;"
+        />
+        <mat-icon style="margin-left: 8px;">person</mat-icon>
+      </div>
+    </div>
+
+    <!-- Custom Field for volume -->
+    <div style="display: flex; flex-direction: column;">
+      <label for="volume" style="font-weight: bold;">Enter volume</label>
+      <div style="border: 1px solid #ccc; border-radius: 4px; padding: 5px;">
+        <input
+          id="volume"
+          formControlName="volume"
+          type="text"
+          placeholder="volume"
+          style="border: none; outline: none; width: 100%;"
+        />
+      </div>
+    </div>
+    <div style="display: flex; flex-direction: column;">
+        <label for="category" style="font-weight: bold;">Enter category</label>
+        <div style="border: 1px solid #ccc; border-radius: 4px; padding: 5px;">
+          <input
+            id="category"
+            formControlName="category"
+            type="text"
+            placeholder="category"
+            style="border: none; outline: none; width: 100%;"
+          />
+        </div>
+      </div>
+      <div style="display: flex; flex-direction: column;">
+        <label for="indivol" style="font-weight: bold;">Enter indivol</label>
+        <div style="border: 1px solid #ccc; border-radius: 4px; padding: 5px;">
+          <input
+            id="indivol"
+            formControlName="indivol"
+            type="text"
+            placeholder="indivol"
+            style="border: none; outline: none; width: 100%;"
+          />
+        </div>
+      </div>
+    <div style="display: flex; flex-direction: column;">
+        <label for="quantity" style="font-weight: bold;">Enter quantity</label>
+        <div style="border: 1px solid #ccc; border-radius: 4px; padding: 5px;">
+          <input
+            id="quantity"
+            formControlName="quantity"
+            type="text"
+            placeholder="quantity"
+            style="border: none; outline: none; width: 100%;"
+          />
+        </div>
+      </div>
+    <div style="display: flex; flex-direction: column;">
+        <label for="price" style="font-weight: bold;">Enter price</label>
+        <div style="border: 1px solid #ccc; border-radius: 4px; padding: 5px;">
+          <input
+            id="price"
+            formControlName="price"
+            type="text"
+            placeholder="price"
+            style="border: none; outline: none; width: 100%;"
+          />
+        </div>
+      </div>
+  </form>
+</div>
+<div mat-dialog-actions [align]="'end'">
+  <button mat-raised-button color="primary" (click)="addRoom()">
+    {{ actionBtn }}
+  </button>
+  <button
+    mat-raised-button
+    color="warn"
+    mat-dialog-close
+    style="margin-left: 8px;"
+  >
+    Close
+  </button>
+</div>

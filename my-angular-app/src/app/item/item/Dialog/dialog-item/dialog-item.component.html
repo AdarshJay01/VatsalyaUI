@@ -1,0 +1,46 @@
+<h1 mat-dialog-title>Add Item</h1>
+<div mat-dialog-content>
+  <form [formGroup]="productform" style="display: flex; flex-direction: column; gap: 15px;">
+    <!-- Custom Field for Item -->
+    <div style="display: flex; flex-direction: column;">
+      <label for="item" style="font-weight: bold;">Enter Item</label>
+      <div style="display: flex; align-items: center; border: 1px solid #ccc; border-radius: 4px; padding: 5px;">
+        <input
+          id="item"
+          formControlName="item"
+          type="text"
+          placeholder="Item Name"
+          style="border: none; outline: none; flex-grow: 1;"
+        />
+        <mat-icon style="margin-left: 8px;">person</mat-icon>
+      </div>
+    </div>
+
+    <!-- Custom Field for Quantity -->
+    <div style="display: flex; flex-direction: column;">
+      <label for="quantity" style="font-weight: bold;">Enter Quantity</label>
+      <div style="border: 1px solid #ccc; border-radius: 4px; padding: 5px;">
+        <input
+          id="quantity"
+          formControlName="quantity"
+          type="number"
+          placeholder="Quantity"
+          style="border: none; outline: none; width: 100%;"
+        />
+      </div>
+    </div>
+  </form>
+</div>
+<div mat-dialog-actions [align]="'end'">
+  <button mat-raised-button color="primary" (click)="addRoom(productform)">
+    {{ actionBtn }}
+  </button>
+  <button
+    mat-raised-button
+    color="warn"
+    mat-dialog-close
+    style="margin-left: 8px;"
+  >
+    Close
+  </button>
+</div>

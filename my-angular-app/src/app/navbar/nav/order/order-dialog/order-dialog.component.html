@@ -1,0 +1,42 @@
+<h1 mat-dialog-title>Add Order</h1>
+<div mat-dialog-content>
+  <form [formGroup]="productform" style="display: flex; flex-direction: column; gap: 15px;">
+    <!-- Custom Field for Item -->
+    <div style="display: flex; flex-direction: column;">
+      <label for="name" style="font-weight: bold;">Enter Name</label>
+      <div style="display: flex; align-items: center; border: 1px solid #ccc; border-radius: 4px; padding: 5px;">
+        <input
+          id="name"
+          formControlName="name"
+          type="text"
+          placeholder="Name"
+          style="border: none; outline: none; flex-grow: 1;"
+        />
+        <mat-icon style="margin-left: 8px;">person</mat-icon>
+      </div>
+    </div>
+    <div style="display: flex; flex-direction: column;">
+        <label for="phno" style="font-weight: bold;">Enter OrderDate</label>
+        <div style="border: 1px solid #ccc; border-radius: 4px; padding: 5px;">
+          <input
+            id="orderdate"
+            formControlName="orderdate"
+            type="text"
+            placeholder="orderdate"
+            style="border: none; outline: none; width: 100%;"
+          />
+        </div>
+      </div>
+      <div mat-dialog-actions [align]="'end'">
+        <button mat-raised-button color="primary" (click)="addRoom()">
+          {{ actionBtn }}
+        </button>
+        <button
+          mat-raised-button
+          color="warn"
+          mat-dialog-close
+          style="margin-left: 8px;"
+        >
+          Close
+        </button>
+      </div>

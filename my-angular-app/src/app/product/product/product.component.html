@@ -1,0 +1,62 @@
+<div class="search-bar">
+  
+<div class="button1">
+  <input
+  type="text"
+  placeholder="Search products..."
+  (input)="onInputChange($event)"
+/><button (click)="filterProducts()">Search</button></div>
+  
+  
+  <div class="button2"><button style="background-color: rgb(112, 164, 35); border-radius: 5%; border:0cap white" (click)="openDialog()"><mat-icon>add_box</mat-icon></button></div>
+
+</div>
+<div class="container page-wrapper">
+    <div class="page-inner">
+      
+        @for (item of filteredProduct; track $index ){
+        <div class="el-wrapper">
+          <button style="border:0cap white; border-radius: 50%; background-color: rgb(255, 55, 0); color: white;" (click)="deleteProduct(item.id)"><mat-icon>delete</mat-icon></button>
+          
+          <div class="box-up">
+            
+            <img class="img" src="g" alt="">
+            <div class="img-info">
+              <div class="info-inner">
+                <span class="p-name">{{item.name}}</span>
+                
+                <span class="p-company">{{item.category}}</span>
+                @if(item.category=="Shampoo"){
+                  <br>
+                  <span class="p-company">Available Volume: {{item.volume}}</span>
+                }
+              </div>
+              @if(item.category!="Shampoo"){
+              <div class="a-size">Available quantity : <span class="size">{{item.quantity}}</span></div>
+              }
+              @else {
+                
+                
+                <div class="a-size">Volume per unit : <span class="size">{{item.indivol}}</span></div>
+
+              }
+            </div>
+          </div>
+  
+          <div class="box-down" (click)="editRoom(item)">
+            <div class="h-bg">
+              <div class="h-bg-inner"></div>
+            </div>
+  
+            <a class="cart" >
+              <span class="price">Rs {{item.price}} </span>
+              <span class="add-to-cart">
+                <span class="txt">Edit Product</span>
+              </span>
+            </a>
+          </div>
+        </div>
+    }
+      </div>
+    </div>
+  
